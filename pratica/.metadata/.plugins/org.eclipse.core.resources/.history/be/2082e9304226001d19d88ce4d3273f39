@@ -1,0 +1,11 @@
+package programa.exercicioDez;
+
+public class Bonus {
+
+	public static void main(String[] args) {
+	Funcionario f1 = new Funcionario("Fulano de Tal", 1200.0,);
+	
+
+	}
+
+}

@@ -1,0 +1,64 @@
+package programa.exercicioDez;
+
+public class Funcionario {
+
+	private String nome;
+	private double salario;
+	//private double bonus;
+	private double salarioLiquido;
+	
+	public Funcionario() {
+		
+	}
+	
+	public Funcionario(String nome, double salario/*, double bonus, double salarioLiquido*/) {
+		this.nome = nome;
+		this.salario = salario;
+	//	this.bonus = bonus;
+		this.salarioLiquido = salarioLiquido;
+	}
+
+
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public double getSalario() {
+		return salario;
+	}
+
+	public void setSalario(double salario) {
+		this.salario = salario;
+	}
+
+//	public double getBonus() {
+//		return bonus;
+//	}
+//
+//	public void setBonus(double bonus) {
+//		this.bonus = bonus;
+//	}
+
+	public double getSalarioLiquido() {
+		return salarioLiquido;
+	}
+
+	public void setSalarioLiquido(double salarioLiquido) {
+		this.salarioLiquido = salarioLiquido;
+	}
+	
+	public void bonificacao(double salario) {
+		if(salario <= 1000) this.salarioLiquido += (salario*0.2)  ;
+		else if(salario > 1000 && salario < 200)  this.salarioLiquido +=(salario*0.1);
+		else this.salarioLiquido-=(salario*0.1);
+	}	
+	@Override
+	public String toString() {
+		return "Funcionario [nome=" + nome + ", salario=" + salario + ", salarioLiquido=" + salarioLiquido + "]";
+	}
+}

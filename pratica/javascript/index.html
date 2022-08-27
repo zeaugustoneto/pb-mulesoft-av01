@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <label for="troco">Insira o troco</label> 
+ <input type="number" name="troco" id="troco">
+<button onclick="calcularTroco()">Calcular Moedas</button>
+
+ <p id="qtdMoedas"></p>
+
+</body>
+<script>
+    function calcularTroco() {
+     let cinquentaCont = 0, vinteCincoCont = 0, dezCont = 0, cincoCont = 0, umCont = 0, contGeral = 0
+    let troco = document.getElementById("troco").value;
+
+     while(troco > 0){
+        if (troco >= 0.50) {
+            cinquentaCont++
+            contGeral++
+            troco = (troco - 0.50).toFixed(2)
+        } else if (troco >= 0.25) {
+            vinteCincoCont++
+            contGeral++
+            troco =(troco - 0.25).toFixed(2)
+        } else if (troco >= 0.10) {
+            dezCont++
+            contGeral++
+            troco =(troco - 0.10).toFixed(2)
+        } else if (troco >= 0.05) {
+            cincoCont++
+            contGeral++
+            troco = (troco - 0.05).toFixed(2)
+        } else if (troco >= 0.01) {
+            umCont++
+            contGeral++
+            troco = (troco - 0.01).toFixed(2)
+        }
+       
+
+    }
+
+  document.getElementById("qtdMoedas").innerHTML = `Total de moedas: ${contGeral}, sendo elas:<br> ${cinquentaCont} moedas de 50,<br> ${vinteCincoCont} moedas de 25, <br>${dezCont} moedas de 10, <br>${cincoCont} moedas de 5, <br>${umCont} moedas de 1` 
+
+}
+</script>
+</html>

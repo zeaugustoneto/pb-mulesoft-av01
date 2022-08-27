@@ -1,0 +1,92 @@
+package programa.exercicioOito;
+
+import java.util.Scanner;
+
+public class PerguntasRespostas {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		Jogador jogador = new Jogador();
+		
+		String respostaJogador;
+		int acerto = 0;
+		int erro = 0;
+		
+		String[] respostas = new String[] { "c", "a", "b", "c", "a", "d" };
+		
+		String[] perguntas = new String[] {
+				"De que são constituídos os diamantes?\n" 
+						+ "a) Grafite\r\n" 
+						+ "b) Rênio\r\n" 
+						+ "c) Carbono\r\n"
+						+ "d) Ósmio\r\n" 
+						+ "e) Bóhrio ",
+				"Qual dessas aves não voa?\n" 
+						+ "a) Pinguim\r\n" 
+						+ "b) Peru\r\n" 
+						+ "c) Cegonha\r\n" 
+						+ "d) Pato\r\n"
+						+ "e) Cisne",
+				"Método de seleção em que predomina o mérito. Essa é a definição de qual conceito da Sociologia?\n"
+						+ "a) Aristocracia\r\n" 
+						+ "b) Meritocracia\r\n" 
+						+ "c) Tirania\r\n" 
+						+ "d) Fidalguia\r\n"
+						+ "e) Romaria\r\n",
+				"Qual o significado da expressão “calcanhar de Aquiles”?\n"
+						+ "a) A característica predominante das pessoas\r\n" 
+						+ "b) Fuga dos problemas\r\n"
+						+ "c) O ponto mais vulnerável de alguém\r\n" 
+						+ "d) Esporão\r\n"
+						+ "e) Parte em que as pessoas concentram a sua força",
+				"Qual destes é um exemplo de palíndromo:\n" 
+						+ "a) Roma é amor.\r\n"
+						+ "b) O rato roeu a roupa do rei de Roma.\r\n" 
+						+ "c) Quem tem boca vai à Roma.\r\n"
+						+ "d) O que é, o que é? Feito para andar e não anda?\r\n"
+						+ "e) \"Uni, duni, tê, Salamê, mingüê, Um sorvete colorê, O escolhido foi você!\"",
+				"Em que país nasceu Vlad III, o Conde Drácula?\n" 
+						+ "a) Polônia\r\n" 
+						+ "b) Irlanda\r\n"
+						+ "c) Escócia\r\n" 
+						+ "d) Transilvânia\r\n" 
+						+ "e) Rússia" };
+				
+		System.out.println("Jogo de Perguntas e Respostas");
+		System.out.println("Qual seu nome?:");
+		jogador.setNome(sc.next());
+		System.out.println("Bem vindo " + jogador.getNome() + ". Vamos começar: ");
+		
+		for(int i = 0; i < perguntas.length; i++ ) {
+			System.out.println(perguntas[i]);
+			System.out.println("Responda abaixo com letra minúscula");
+			respostaJogador = sc.next();
+
+			if (respostas[i].equals(respostaJogador)) {
+				System.out.println();
+				System.out.println("Você acertou! A resposta era a letra " + respostas[i] + ")");	
+				System.out.println("-------------------------------------------");
+				System.out.println();
+				acerto++;
+				
+			} else {
+				System.out.println();
+				System.out.println("Você errou! Sua resposta: " + respostaJogador + " \nResposta certa: " + respostas[i]);
+				System.out.println("-------------------------------------------");
+				System.out.println();
+				erro++;
+				
+			}
+
+		}		
+
+		jogador.setAcertos(acerto);
+		jogador.setErros(erro);
+
+		System.out.println("------ FIM DO JOGO ------");
+		System.out.println(jogador.toString());
+
+	}
+	
+}

@@ -1,0 +1,32 @@
+package programa.exercicioNove;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+public class Login {
+
+	public static void main(String[] args) {
+		String usuario = "aluno1";
+		String senha = "123aluno1";
+		Calendar calendar = Calendar.getInstance();
+		
+		
+		//String horaFormatada = sdf.format(hora);
+		 calendar.set(Calendar.HOUR_OF_DAY, 10);
+    int hora = calendar.get(Calendar.HOUR_OF_DAY);
+		
+		System.out.println(calendar.getTime());
+		//System.out.println(hora.getClass().getSimpleName());
+		if(hora > 6 && hora < 12){
+			System.out.println("Bom Dia");
+		}else if(hora > 12 && hora < 18){
+			System.out.println("Boa Tarde");
+		}else{
+			System.out.println("Boa Noite");
+		}
+	}
+
+	}
+
+

@@ -1,0 +1,22 @@
+package programa.exercicioDez;
+
+import java.util.Scanner;
+
+public class Bonus {
+
+	public static void main(String[] args) {
+//	Funcionario f1 = new Funcionario("Fulano de Tal", 1200.0);
+//	
+//	System.out.println(f1.toString());
+//	f1.bonificacao(1200.0);
+//	System.out.println(f1.toString());
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Digite o numero de funcionarios");
+		int nFuncionarios = sc.nextInt();
+		
+		String[] funcionarios = new String[nFuncionarios];
+		
+	}
+
+}
